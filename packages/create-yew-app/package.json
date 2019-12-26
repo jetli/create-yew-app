@@ -1,0 +1,29 @@
+{
+  "name": "create-yew-app",
+  "version": "0.1.3",
+  "description": "Set up a modern yew web app by running one command. ",
+  "bin": {
+    "create-yew-app": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetli/create-yew-app.git",
+    "directory": "packages/create-yew-app"
+  },
+  "files": [
+    "index.js",
+    "createYewApp.js"
+  ],
+  "keywords": [
+    "yew"
+  ],
+  "author": "Jet Li <jing.i.qin@icloud.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jetli/create-yew-app/issues"
+  },
+  "homepage": "https://github.com/jetli/create-yew-app#readme"
+}
