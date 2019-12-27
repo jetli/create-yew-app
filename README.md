@@ -2,6 +2,7 @@
 
 Create Yew apps with no build configuration.
 
+- [Creating an App](#creating-an-app) – How to create a new app.
 - [Yew](https://github.com/yewstack/yew) - Rust / Wasm framework for building client web apps.
 - [Awesome Yew](https://github.com/jetli/awesome-yew) - A curated list of awesome things related to Yew / WebAssembly.
 
