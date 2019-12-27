@@ -1,6 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
+/// About page
 pub struct About;
 
 impl Component for About {

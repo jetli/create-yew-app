@@ -1,22 +1,14 @@
 use yew::prelude::*;
-use yew_router::{prelude::*, Switch, route::Route};
+use yew_router::{prelude::*, route::Route};
 
+use crate::routes::AppRoute;
 use super::{
     home::Home,
     about::About,
 };
 
+/// Root component
 pub struct App;
-
-#[derive(Switch, Debug, Clone)]
-pub enum AppRouter {
-    #[to= "/about"]
-    About,
-    #[to = "/page-not-found"]
-    PageNotFound(Option<String>),
-    #[to= "/"]
-    Home,
-}
 
 impl Component for App {
     type Message = ();
@@ -33,17 +25,17 @@ impl Component for App {
     fn view(&self) -> Html<Self> {
         html! {
             <div>
-                <Router<AppRouter, ()>
-                    render = Router::render(|switch: AppRouter | {
+                <Router<AppRoute, ()>
+                    render = Router::render(|switch: AppRoute | {
                         match switch {
-                            AppRouter::Home => html!{ <Home /> },
-                            AppRouter::About => html!{ <About /> },
-                            AppRouter::PageNotFound(None) => html!{"Page not found"},
-                            AppRouter::PageNotFound(Some(missed_route)) => html!{format!("Page '{}' not found", missed_route)}
+                            AppRoute::Home => html!{ <Home /> },
+                            AppRoute::About => html!{ <About /> },
+                            AppRoute::PageNotFound(None) => html!{"Page not found"},
+                            AppRoute::PageNotFound(Some(missed_route)) => html!{format!("Page '{}' not found", missed_route)}
                         }
                     } )
                     redirect = Router::redirect(|route: Route<()>| {
-                        AppRouter::PageNotFound(Some(route.route))
+                        AppRoute::PageNotFound(Some(route.route))
                     })
                 />
             </div>

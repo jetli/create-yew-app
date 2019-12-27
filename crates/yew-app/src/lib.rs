@@ -3,6 +3,7 @@
 #![allow(clippy::eval_order_dependence)]
 
 mod components;
+mod routes;
 
 use wasm_bindgen::prelude::*;
 use web_logger;

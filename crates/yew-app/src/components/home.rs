@@ -1,6 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
+/// Home page
 pub struct Home;
 
 impl Component for Home {
