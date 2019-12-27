@@ -1,6 +1,6 @@
 # Create Yew App
 
-Create React apps with no build configuration.
+Create Yew apps with no build configuration.
 
 - [Yew](https://github.com/yewstack/yew) - Rust / Wasm framework for building client web apps.
 - [Awesome Yew](https://github.com/jetli/awesome-yew) - A curated list of awesome things related to Yew / WebAssembly.
@@ -14,6 +14,11 @@ npx create-yew-app my-app
 cd my-app
 npm start
 ```
+
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+
+Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
+When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
 ## Creating an App
 
