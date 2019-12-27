@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "parcel build static/index.html",
-    "start": "parcel static/index.html",
+    "start": "parcel static/index.html -p 8000 --open",
     "test": "wasm-pack test --node"
   },
   "devDependencies": {
