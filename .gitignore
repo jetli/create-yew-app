@@ -16,6 +16,7 @@ node_modules/
 build
 dist
 pkg
+.cache
 .DS_Store
 my-app*
 lerna-debug.log
