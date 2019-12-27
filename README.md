@@ -115,3 +115,15 @@ It correctly bundles Yew in production mode and optimizes the build for the best
 The build is minified and the filenames include the hashes.<br>
 
 Your app is ready to be deployed.
+
+# Contributing
+
+Feel free to take a look at the current issues in this repo for anything that currently needs to be worked on.
+
+You are also welcome to open a PR or a new issue if you see something is missing or could be improved upon.
+
+# License
+
+Apache License (Version 2.0)
+
+See [LICENSE](./LICENSE) for details.
