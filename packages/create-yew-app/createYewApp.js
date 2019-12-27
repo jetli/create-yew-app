@@ -53,6 +53,8 @@ if (args.length >= 1) {
   }
 }
 
+console.log(" Creating a new Yew app in `" + folderName + "`. ");
+
 let gitFolder = path.join(folderName, ".git-clone");
 
 // This uses --no-tags and --depth 1 in order to make the cloning faster
@@ -67,7 +69,7 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     throw err;
 
   } else {
-    console.log(" 🦀 Rust + 🕸 WebAssembly + Yew = ❤️ ");
+    console.log(" Success! 🦀 Rust + 🕸 WebAssembly + Yew = ❤️ ");
     console.log(" Installing dependencies... ");
     
     // Install npm deps
