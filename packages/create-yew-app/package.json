@@ -22,6 +22,9 @@
   ],
   "author": "Jet Li <jing.i.qin@icloud.com>",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=8"
+  },
   "bugs": {
     "url": "https://github.com/jetli/create-yew-app/issues"
   },
