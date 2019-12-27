@@ -21,7 +21,7 @@ code {
   pointer-events: none;
   width: 200px;
   height: 200px;
-  background: url(logo.svg);
+  background: url(./logo.svg);
   background-size: 200px 200px;
 }
 
