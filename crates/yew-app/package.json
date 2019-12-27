@@ -1,0 +1,15 @@
+{
+  "author": "Jet Li <jing.i.qin@icloud.com>",
+  "name": "yew-app",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "parcel build static/index.html",
+    "start": "parcel static/index.html",
+    "test": "wasm-pack test --node"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-wasm.rs": "^1.2.15",
+    "typescript": "^3.7.4"
+  }
+}
