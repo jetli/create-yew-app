@@ -1,5 +1,9 @@
-# Create Yew App
-Set up a modern yew web app by running one command. 
+# create-yew-app
+This package includes the global command for [Create React App](https://github.com/jetli/create-yew-app). <br/>
+Please refer to its documentation:
+
+- [Quick Overview](https://github.com/jetli/create-yew-app#quick-overview) – How to create a new app.
+- [Creating an App](https://github.com/jetli/create-yew-app#creating-an-app) – How to develop apps bootstrapped with Create Yew App.
 
 ## Quick Overview
 ```
