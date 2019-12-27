@@ -20,6 +20,13 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
+### Get Started Immediately
+
+You **don’t** need to install or configure tools like Webpack or Parcel.<br>
+They are preconfigured and hidden so that you can focus on the code.
+
+Create a project, and you’re good to go.
+
 ## Creating an App
 
 **You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
