@@ -3,7 +3,7 @@
   "name": "yew-app",
   "version": "0.1.0",
   "scripts": {
-    "build": "parcel build static/index.html",
+    "build": "parcel build static/index.html --public-url ./",
     "start": "parcel static/index.html -p 8000 --open",
     "test": "wasm-pack test --node"
   },
