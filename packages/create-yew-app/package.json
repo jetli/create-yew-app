@@ -1,6 +1,6 @@
 {
   "name": "create-yew-app",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "description": "Set up a modern Yew web app by running one command. ",
   "bin": {
     "create-yew-app": "./index.js"
@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/jetli/create-yew-app#readme",
   "dependencies": {
+    "chalk": "3.0.0",
     "cpr": "^3.0.1",
     "rimraf": "^3.0.0"
   }
