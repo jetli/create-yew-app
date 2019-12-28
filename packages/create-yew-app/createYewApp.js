@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 const { execSync, spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -81,10 +83,14 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     }
 
     console.log(" Installed dependencies ✅ ");
-
-    console.log(" Server running at http://localhost:8000 🎉 ");
-
-    // Run the app
-    run("npm", ["run", "start"], { cwd: folderName });
+    console.log();
+    console.log(` Success! 🎉 Created ${folderName} at ${folderName}`);
+    console.log();
+    console.log(' We suggest that you begin by typing:');
+    console.log();
+    console.log('   cd', folderName);
+    console.log('   npm start');
+    console.log();
+    console.log(' Happy hacking!');
   }
 });
