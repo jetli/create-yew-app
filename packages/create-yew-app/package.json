@@ -1,6 +1,6 @@
 {
   "name": "create-yew-app",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Set up a modern Yew web app by running one command. ",
   "bin": {
     "create-yew-app": "./index.js"
