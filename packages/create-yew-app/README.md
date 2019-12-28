@@ -16,6 +16,12 @@ npm start
 Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
+<p align='center'>
+    <img src="https://github.com/jetli/create-yew-app/raw/master/packages/create-yew-app/demo.svg?sanitize=true" />
+    
+_(demo.svg is created by [termtosvg](https://github.com/nbedos/termtosvg))_
+</p>
+
 ### Get Started Immediately
 
 You **don’t** need to install or configure tools like Webpack or Parcel.<br>
