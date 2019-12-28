@@ -85,6 +85,16 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     console.log(" Installed dependencies ✅ ");
     console.log();
     console.log(` Success! 🎉 Created ${folderName} at ${folderName}`);
+    console.log(' Inside that directory, you can run several commands:');
+    console.log();
+    console.log('   npm start');
+    console.log('     Starts the development server.');
+    console.log();
+    console.log('   npm run build');
+    console.log('     Bundles the app into static files for production.');
+    console.log();
+    console.log('   npm run test');
+    console.log('     Starts the test runner.');
     console.log();
     console.log(' We suggest that you begin by typing:');
     console.log();
