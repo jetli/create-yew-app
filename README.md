@@ -22,7 +22,9 @@ Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
 <p align='center'>
-    ![demo.svg](packages/create-yew-app/demo.svg)
+    <img src="packages/create-yew-app/demo.svg" />
+    
+_(demo.svg is created by [termtosvg](https://github.com/nbedos/termtosvg))_
 </p>
 
 ### Get Started Immediately
