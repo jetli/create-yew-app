@@ -21,6 +21,10 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
+<p align='center'>
+    ![demo.svg](packages/create-yew-app/demo.svg)
+</p>
+
 ### Get Started Immediately
 
 You **don’t** need to install or configure tools like Webpack or Parcel.<br>
