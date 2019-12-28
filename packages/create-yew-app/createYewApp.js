@@ -3,6 +3,7 @@
 'use strict';
 
 const { execSync, spawnSync } = require("child_process");
+const chalk = require('chalk');
 const fs = require("fs");
 const path = require("path");
 const cpr = require("cpr");
@@ -55,9 +56,12 @@ if (args.length >= 1) {
   }
 }
 
-console.log(" Creating a new Yew app in `" + folderName + "`. ");
-
+let rootFolder = path.resolve(folderName);
 let gitFolder = path.join(folderName, ".git-clone");
+
+console.log();
+console.log(` Creating a new Yew app in ${chalk.green(rootFolder)}. `);
+console.log();
 
 // This uses --no-tags and --depth 1 in order to make the cloning faster
 run("git", ["clone", "--no-tags", "--depth", "1", "https://github.com/jetli/create-yew-app.git", gitFolder]);
@@ -71,7 +75,8 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     throw err;
 
   } else {
-    console.log(" Success! 🦀 Rust + 🕸 WebAssembly + Yew = ❤️ ");
+    console.log(" 🦀 Rust + 🕸 WebAssembly + Yew = ❤️ ");
+    console.log();
     console.log(" Installing dependencies... ");
     
     // Install npm deps
@@ -84,23 +89,31 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
 
     console.log(" Installed dependencies ✅ ");
     console.log();
-    console.log(` Success! 🎉 Created ${folderName} at ${folderName}`);
+
+    // Git init
+    run("git", ["init"], { cwd: folderName, stdio: 'ignore' });
+
+    console.log(" Initialized a git repository ✅ ");
+    console.log();
+
+    console.log(` Success! 🎉  Created ${folderName} at ${chalk.green(rootFolder)}`);
     console.log(' Inside that directory, you can run several commands:');
     console.log();
-    console.log('   npm start');
+    console.log(chalk.cyan('   npm start'));
     console.log('     Starts the development server.');
     console.log();
-    console.log('   npm run build');
+    console.log(chalk.cyan('   npm run build'));
     console.log('     Bundles the app into static files for production.');
     console.log();
-    console.log('   npm run test');
+    console.log(chalk.cyan('   npm run test'));
     console.log('     Starts the test runner.');
     console.log();
     console.log(' We suggest that you begin by typing:');
     console.log();
-    console.log('   cd', folderName);
-    console.log('   npm start');
+    console.log(chalk.cyan('   cd'), folderName);
+    console.log(chalk.cyan('   npm start'));
     console.log();
-    console.log(' Happy hacking!');
+    console.log(' Happy hacking! 😎 ');
+    console.log();
   }
 });
