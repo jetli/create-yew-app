@@ -1,5 +1,4 @@
 use yew::prelude::*;
-use yew_router::prelude::*;
 
 /// Home page
 pub struct Home;
@@ -18,10 +17,10 @@ impl Component for Home {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="App">
-                <header class="App-header">
-                    <a 
-                        class="App-logo"
+            <div class="app">
+                <header class="app-header">
+                    <a
+                        class="app-logo"
                         href="https://yew.rs"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -31,14 +30,13 @@ impl Component for Home {
                         { "Edit " } <code>{ "src/components/home.rs" }</code> { " and save to reload." }
                     </p>
                     <a
-                        class="App-link"
+                        class="app-link"
                         href="https://yew.rs"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         { "Learn Yew" }
                     </a>
-                    <RouterLink text="About" link="/about" classes="App-link"/>
                 </header>
             </div>
         }
