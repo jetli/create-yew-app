@@ -1,11 +1,8 @@
 use yew::prelude::*;
 use yew_router::{prelude::*, route::Route};
 
-use crate::routes::AppRoute;
-use super::{
-    home::Home,
-    about::About,
-};
+use crate::components::nav::Nav;
+use crate::routes::{about::About, home::Home, AppRoute};
 
 /// Root component
 pub struct App;
@@ -24,7 +21,8 @@ impl Component for App {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div>
+            <>
+                <Nav />
                 <Router<AppRoute, ()>
                     render = Router::render(|switch: AppRoute | {
                         match switch {
@@ -38,7 +36,7 @@ impl Component for App {
                         AppRoute::PageNotFound(Some(route.route))
                     })
                 />
-            </div>
+            </>
         }
     }
- }
+}

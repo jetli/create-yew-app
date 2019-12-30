@@ -2,13 +2,14 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::eval_order_dependence)]
 
+mod app;
 mod components;
 mod routes;
 
 use wasm_bindgen::prelude::*;
 use web_logger;
 
-use components::app::App;
+use app::App;
 
 // Use `wee_alloc` as the global allocator.
 #[global_allocator]
