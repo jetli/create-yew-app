@@ -84,10 +84,12 @@ my-app
 │   └── styles.css
 └── src
     ├── lib.rs
-    ├── routes.rs
-    └── components
+    ├── app.rs
+    ├── components
+    │   ├── nav.rs
+    │   └── mod.rs
+    └── routes
         ├── about.rs
-        ├── app.rs
         ├── home.rs
         └── mod.rs
 ```
