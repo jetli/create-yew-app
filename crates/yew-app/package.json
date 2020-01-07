@@ -10,6 +10,7 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-wasm.rs": "^1.2.15",
+    "sass": "^1.24.2",
     "typescript": "^3.7.4"
   }
 }
