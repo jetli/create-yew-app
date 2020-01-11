@@ -1,6 +1,8 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
+use crate::routes::AppRoute;
+
 /// Nav component
 pub struct Nav;
 
@@ -16,12 +18,12 @@ impl Component for Nav {
         true
     }
 
-    fn view(&self) -> Html<Self> {
+    fn view(&self) -> Html {
         html! {
             <nav>
                 <ul>
-                    <li><RouterLink text="Home" link="/" classes="app-link"/></li>
-                    <li><RouterLink text="About" link="/about" classes="app-link"/></li>
+                    <li><RouterAnchor<AppRoute> route=AppRoute::Home classes="app-link" >{ "Home" }</RouterAnchor<AppRoute>></li>
+                    <li><RouterAnchor<AppRoute> route=AppRoute::About classes="app-link">{ "About" }</RouterAnchor<AppRoute>></li>
                 </ul>
             </nav>
         }
