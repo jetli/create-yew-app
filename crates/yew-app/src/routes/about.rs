@@ -15,7 +15,7 @@ impl Component for About {
         true
     }
 
-    fn view(&self) -> Html<Self> {
+    fn view(&self) -> Html {
         html! {
             <div class="app">
                 <header class="app-header">

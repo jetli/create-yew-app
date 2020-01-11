@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use yew_router::{prelude::*, route::Route};
+use yew_router::switch::Permissive;
 
 use crate::components::nav::Nav;
 use crate::routes::{about::About, home::Home, AppRoute};
@@ -19,7 +20,7 @@ impl Component for App {
         true
     }
 
-    fn view(&self) -> Html<Self> {
+    fn view(&self) -> Html {
         html! {
             <>
                 <Nav />
@@ -28,12 +29,12 @@ impl Component for App {
                         match switch {
                             AppRoute::Home => html!{ <Home /> },
                             AppRoute::About => html!{ <About /> },
-                            AppRoute::PageNotFound(None) => html!{"Page not found"},
-                            AppRoute::PageNotFound(Some(missed_route)) => html!{format!("Page '{}' not found", missed_route)}
+                            AppRoute::PageNotFound(Permissive(None)) => html!{"Page not found"},
+                            AppRoute::PageNotFound(Permissive(Some(missed_route))) => html!{format!("Page '{}' not found", missed_route)}
                         }
                     } )
                     redirect = Router::redirect(|route: Route<()>| {
-                        AppRoute::PageNotFound(Some(route.route))
+                        AppRoute::PageNotFound(Permissive(Some(route.route)))
                     })
                 />
             </>
