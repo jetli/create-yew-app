@@ -17,8 +17,8 @@ crate-type = ["cdylib"]
 [dependencies]
 log = "0.4"
 web_logger = "0.2"
-yew = "0.11.0"
-yew-router = "0.8.1"
+yew = { git = "https://github.com/yewstack/yew", branch = "web-sys", features = ["web_sys", "services"] }
+yew-router = { git = "https://github.com/yewstack/yew_router", branch = "master", features = ["web_sys"] }
 wasm-bindgen = "0.2.58"
 wee_alloc = "0.4.5"
 
