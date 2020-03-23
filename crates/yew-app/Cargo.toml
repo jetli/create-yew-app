@@ -17,7 +17,7 @@ crate-type = ["cdylib"]
 [dependencies]
 log = "0.4"
 web_logger = "0.2"
-yew = { version="0.14.1", features = ["web_sys"] }
+yew = { version="0.14.2", features = ["web_sys"] }
 yew-router = { version="0.11.0", features = ["web_sys"] }
 wasm-bindgen = "0.2.59"
 wee_alloc = "0.4.5"
