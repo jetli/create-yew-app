@@ -2,9 +2,9 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::eval_order_dependence)]
 
-mod app;
-mod components;
-mod routes;
+pub mod app;
+pub mod components;
+pub mod routes;
 
 use wasm_bindgen::prelude::*;
 use web_logger;
