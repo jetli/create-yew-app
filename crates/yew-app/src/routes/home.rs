@@ -30,6 +30,7 @@ impl Component for Home {
                         { "Edit " } <code>{ "src/components/home.rs" }</code> { " and save to reload." }
                     </p>
                     <a
+                        id="learn_yew"
                         class="app-link"
                         href="https://yew.rs"
                         target="_blank"

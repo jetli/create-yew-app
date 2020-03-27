@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use yew_router::{prelude::*, route::Route};
 use yew_router::switch::Permissive;
+use yew_router::{prelude::*, route::Route};
 
 use crate::components::nav::Nav;
 use crate::routes::{about::About, home::Home, AppRoute};
