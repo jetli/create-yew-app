@@ -16,6 +16,10 @@ impl Component for App {
         App {}
     }
 
+    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+        false
+    }
+
     fn update(&mut self, _: Self::Message) -> ShouldRender {
         true
     }
