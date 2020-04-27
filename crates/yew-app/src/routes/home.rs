@@ -27,7 +27,7 @@ impl Component for Home {
                     >
                     </a>
                     <p>
-                        { "Edit " } <code>{ "src/components/home.rs" }</code> { " and save to reload." }
+                        { "Edit " } <code>{ "src/routes/home.rs" }</code> { " and save to reload." }
                     </p>
                     <a
                         id="learn_yew"
