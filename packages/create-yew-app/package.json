@@ -39,6 +39,7 @@
   "dependencies": {
     "chalk": "3.0.0",
     "cpr": "^3.0.1",
+    "cross-spawn": "^7.0.3",
     "rimraf": "^3.0.0"
   }
 }
