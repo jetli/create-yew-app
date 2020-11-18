@@ -2,7 +2,8 @@
 
 'use strict';
 
-const { execSync, spawnSync } = require("child_process");
+const { execSync } = require("child_process");
+const spawn = require('cross-spawn');
 const chalk = require('chalk');
 const fs = require("fs");
 const path = require("path");
@@ -21,7 +22,7 @@ function isPresent(dep) {
 
 // Run a tool
 function run(cmd, args, opts) {
-  const output = spawnSync(cmd, args, opts);
+  const output = spawn.sync(cmd, args, opts);
 
   if (output.error != null) {
     throw output.error;
