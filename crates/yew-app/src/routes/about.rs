@@ -1,47 +1,27 @@
 use yew::prelude::*;
 
 /// About page
-pub struct About;
-
-impl Component for About {
-    type Message = ();
-    type Properties = ();
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn changed(&mut self, _ctx: &Context<Self>) -> bool {
-        true
-    }
-
-    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
-        true
-    }
-
-    fn rendered(&mut self, _ctx: &Context<Self>, _first_render: bool) {}
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <div class="app">
-                <header class="app-header">
-                    <p>
-                        <a
-                            class="app-link"
-                            href="https://github.com/jetli/create-yew-app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            { "Create Yew App" }
-                        </a>
-                        { ", Set up a modern yew web app by running one command." }
-                    </p>
-                    <p>
-                        { "Edit " } <code>{ "src/components/about.rs" }</code> { " and save to reload." }
-                    </p>
-                </header>
-            </div>
-        }
+#[function_component(About)]
+pub fn about() -> Html {
+    html! {
+        <div class="app">
+            <header class="app-header">
+                <p>
+                    <a
+                        class="app-link"
+                        href="https://github.com/jetli/create-yew-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        { "Create Yew App" }
+                    </a>
+                    { ", Set up a modern yew web app by running one command." }
+                </p>
+                <p>
+                    { "Edit " } <code>{ "src/components/about.rs" }</code> { " and save to reload." }
+                </p>
+            </header>
+        </div>
     }
 }
 
