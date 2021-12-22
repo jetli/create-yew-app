@@ -7,19 +7,21 @@ impl Component for About {
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        About {}
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn changed(&mut self, _ctx: &Context<Self>) -> bool {
         true
     }
 
-    fn view(&self) -> Html {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
+        true
+    }
+
+    fn rendered(&mut self, _ctx: &Context<Self>, _first_render: bool) {}
+
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div class="app">
                 <header class="app-header">
@@ -50,14 +52,13 @@ mod tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     use super::About;
-    use yew::App;
+    use yew::start_app;
 
     #[wasm_bindgen_test]
     fn about_page_has_an_app_link() {
-        let app: App<About> = yew::App::new();
-        app.mount(yew::utils::document().get_element_by_id("output").unwrap());
+        start_app::<About>();
 
-        let app_links = yew::utils::document().get_elements_by_class_name("app-link");
+        let app_links = gloo_utils::document().get_elements_by_class_name("app-link");
 
         assert_eq!(app_links.length(), 1);
 

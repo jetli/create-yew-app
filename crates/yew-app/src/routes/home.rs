@@ -7,19 +7,21 @@ impl Component for Home {
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Home {}
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn changed(&mut self, _ctx: &Context<Self>) -> bool {
         true
     }
 
-    fn view(&self) -> Html {
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
+        true
+    }
+
+    fn rendered(&mut self, _ctx: &Context<Self>, _first_render: bool) {}
+
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div class="app">
                 <header class="app-header">
