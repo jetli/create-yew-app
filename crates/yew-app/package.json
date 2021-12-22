@@ -8,10 +8,10 @@
     "test": "wasm-pack test --headless --chrome"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-wasm.rs": "^1.2.16",
-    "sass": "^1.24.2",
+    "cross-env": "^7.0.3",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-wasm.rs": "^1.3.0",
+    "sass": "^1.45.1",
     "typescript": "^3.7.4"
   }
 }
