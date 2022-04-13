@@ -16,8 +16,11 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 log = "0.4"
+serde = "1"
+reqwest = { version = "0.11", features = ["json"] }
 yew = "0.19.3"
 yew-router = "0.16.0"
+yew-hooks = "0.1"
 wasm-bindgen = "0.2"
 wasm-logger = "0.2.0"
 wee_alloc = "0.4.5"
