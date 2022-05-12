@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use yew_hooks::use_counter;
+use yew_hooks::prelude::*;
 
 /// Home page
 #[function_component(Home)]
