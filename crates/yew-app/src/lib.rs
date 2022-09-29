@@ -6,9 +6,9 @@ use wasm_bindgen::prelude::*;
 
 use app::App;
 
-// Use `wee_alloc` as the global allocator.
+// Use `std::alloc` as the global allocator.
 #[global_allocator]
-static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+static ALLOC: std::alloc::System = std::alloc::System;
 
 // This is the entry point for the web app
 #[wasm_bindgen]
