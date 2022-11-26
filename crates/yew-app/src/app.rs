@@ -10,7 +10,7 @@ pub fn app() -> Html {
     html! {
         <BrowserRouter>
             <Nav />
-            <Switch<AppRoute> render={Switch::render(switch)} />
+            <Switch<AppRoute> render={switch} />
         </BrowserRouter>
     }
 }

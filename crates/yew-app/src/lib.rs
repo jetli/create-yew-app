@@ -14,6 +14,6 @@ static ALLOC: std::alloc::System = std::alloc::System;
 #[wasm_bindgen]
 pub fn run() -> Result<(), JsValue> {
     wasm_logger::init(wasm_logger::Config::default());
-    yew::start_app::<App>();
+    yew::Renderer::<App>::new().render();
     Ok(())
 }
