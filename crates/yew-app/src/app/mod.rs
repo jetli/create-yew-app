@@ -4,6 +4,7 @@ use yew_router::prelude::*;
 pub mod about;
 pub mod home;
 
+use crate::components::nav::Nav;
 use about::About;
 use home::Home;
 
@@ -25,5 +26,18 @@ pub fn switch(routes: AppRoute) -> Html {
         AppRoute::Home => html! { <Home /> },
         AppRoute::About => html! { <About /> },
         AppRoute::PageNotFound => html! { "Page not found" },
+    }
+}
+
+/// Root app component
+#[function_component(App)]
+pub fn app() -> Html {
+    html! {
+        <HashRouter>
+            <div class="flex min-h-screen flex-col">
+                <Nav />
+                <Switch<AppRoute> render={switch} />
+            </div>
+        </HashRouter>
     }
 }

@@ -1,17 +1,20 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::routes::AppRoute;
+use crate::app::AppRoute;
 
 /// Nav component
 #[function_component(Nav)]
 pub fn nav() -> Html {
     html! {
-        <nav>
-            <ul>
-                <li><Link<AppRoute> to={AppRoute::Home} classes="app-link" >{ "Home" }</Link<AppRoute>></li>
-                <li><Link<AppRoute> to={AppRoute::About} classes="app-link">{ "About" }</Link<AppRoute>></li>
-            </ul>
-        </nav>
+        <div class="container py-4">
+            <nav class="flex space-x-4 items-center">
+                <Link<AppRoute> to={AppRoute::Home} classes="text-emerald-800 underline" >
+                    <img class="w-10 h-10" src="logo.svg" alt="Yew" />
+                </Link<AppRoute>>
+                <Link<AppRoute> to={AppRoute::Home} classes="text-emerald-800 underline" >{ "Home" }</Link<AppRoute>>
+                <Link<AppRoute> to={AppRoute::About} classes="text-emerald-800 underline">{ "About" }</Link<AppRoute>>
+            </nav>
+        </div>
     }
 }

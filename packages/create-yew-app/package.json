@@ -1,6 +1,6 @@
 {
   "name": "create-yew-app",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "description": "Set up a modern Yew web app by running one command. ",
   "bin": {
     "create-yew-app": "./index.js"
@@ -24,8 +24,7 @@
     "webassembly",
     "wasm-bindgen",
     "wasm-pack",
-    "rust",
-    "parcel"
+    "rust"
   ],
   "author": "Jet Li <jing.i.qin@icloud.com>",
   "license": "Apache-2.0",

@@ -13,26 +13,23 @@ Create Yew apps with no build configuration.
 ```sh
 npx create-yew-app my-app
 cd my-app
-npm start
+trunk serve
 ```
 
 _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
 
-Then open [http://localhost:8000/](http://localhost:8000/) to see your app.<br/>
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+Then open [http://localhost:8080/](http://localhost:8080/) to see your app.<br/>
+When you’re ready to deploy to production, create a minified bundle with `trunk build`.
 
-<p align='center'>
-    <img src="packages/create-yew-app/demo.svg" />
-    
-_(demo.svg is created by [termtosvg](https://github.com/nbedos/termtosvg))_
-</p>
+## Getting Started
 
-### Get Started Immediately
+### Install Rust wasm target
 
-You **don’t** need to install or configure tools like Webpack or Parcel.<br>
-They are preconfigured and hidden so that you can focus on the code.
+```sh
+rustup target add wasm32-unknown-unknown
+```
 
-Create a project, and you’re good to go.
+### Install [Trunk](https://trunkrs.dev).
 
 ## Creating an App
 
@@ -72,27 +69,26 @@ Inside that directory, it will generate the initial project structure and instal
 ```
 my-app
 ├── README.md
-├── node_modules
-├── package.json
 ├── .gitignore
 ├── Cargo.toml
+├── index.html
 ├── LICENSE-APACHE
 ├── LICENSE-MIT
-├── static
+├── tailwind.config.js
+├── tailwind.css
+├── Trunk.toml
+├── public
 │   ├── favicon.ico
-│   ├── index.html
-│   ├── index.ts
 │   ├── logo.svg
-│   └── styles.css
 └── src
     ├── lib.rs
-    ├── app.rs
-    ├── components
-    │   ├── nav.rs
+    ├── main.rs
+    ├── app
+    │   ├── about.rs
+    │   ├── home.rs
     │   └── mod.rs
-    └── routes
-        ├── about.rs
-        ├── home.rs
+    └── components
+        ├── nav.rs
         └── mod.rs
 ```
 No configuration or complicated folder structures, only the files you need to build your app.<br>
@@ -104,20 +100,15 @@ cd my-app
 
 Inside the newly created project, you can run some built-in commands:
 
-### `npm start` or `yarn start`
+### `trunk serve`
 
 Runs the app in development mode.<br>
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will automatically reload if you make changes to the code.<br>
 You will see the build errors and lint warnings in the console.
 
-### `npm test` or `yarn test`
-
-Runs the test watcher in an interactive mode.<br>
-By default, runs tests related to files changed since the last commit.
-
-### `npm run build` or `yarn build`
+### `trunk build`
 
 Builds the app for production to the `dist` folder.<br>
 It correctly bundles Yew in production mode and optimizes the build for the best performance.
@@ -125,6 +116,11 @@ It correctly bundles Yew in production mode and optimizes the build for the best
 The build is minified and the filenames include the hashes.<br>
 
 Your app is ready to be deployed.
+
+### `wasm-pack test --headless --chrome`
+
+Runs the test watcher in an interactive mode.<br>
+By default, runs tests related to files changed since the last commit.
 
 # Contributing
 

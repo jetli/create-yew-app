@@ -44,6 +44,11 @@ if (!isPresent("cargo --version")) {
   process.exit(1);
 }
 
+if (!isPresent("trunk --version")) {
+  console.log('\n Trunk is required, see: https://trunkrs.dev');
+  process.exit(1);
+}
+
 const args = process.argv.slice(2);
 
 let folderName = '.';
@@ -79,9 +84,6 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     console.log(" 🦀 Rust + 🕸 WebAssembly + Yew = ❤️ ");
     console.log();
     console.log(" Installing dependencies... ");
-    
-    // Install npm deps
-    run("npm", ["install"], { cwd: folderName });
 
     // Install wasm-pack
     if (!isPresent("wasm-pack --version")) {
@@ -100,19 +102,19 @@ cpr(path.join(gitFolder, "crates/yew-app"), folderName, {}, function (err, files
     console.log(` Success! 🎉  Created ${folderName} at ${chalk.green(rootFolder)}`);
     console.log(' Inside that directory, you can run several commands:');
     console.log();
-    console.log(chalk.cyan('   npm start'));
+    console.log(chalk.cyan('   trunk serve'));
     console.log('     Starts the development server.');
     console.log();
-    console.log(chalk.cyan('   npm run build'));
+    console.log(chalk.cyan('   trunk build'));
     console.log('     Bundles the app into static files for production.');
     console.log();
-    console.log(chalk.cyan('   npm run test'));
+    console.log(chalk.cyan('   wasm-pack test --headless --chrome'));
     console.log('     Starts the test runner.');
     console.log();
     console.log(' We suggest that you begin by typing:');
     console.log();
     console.log(chalk.cyan('   cd'), folderName);
-    console.log(chalk.cyan('   npm start'));
+    console.log(chalk.cyan('   trunk serve'));
     console.log();
     console.log(' Happy hacking! 😎 ');
     console.log();

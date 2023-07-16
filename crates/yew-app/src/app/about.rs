@@ -16,21 +16,17 @@ pub fn about() -> Html {
     };
 
     html! {
-        <div class="app">
-            <header class="app-header">
-                <p>
-                    <a
-                        class="app-link"
-                        href="https://github.com/jetli/create-yew-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
+        <div class="container text-center">
+            <header class="space-y-8">
+                <p class="mt-24">
+                    <a class="text-emerald-800 underline" href="https://github.com/jetli/create-yew-app" target="_blank" rel="noopener noreferrer"
                     >
                         { "Create Yew App" }
                     </a>
                     { ", Set up a modern yew web app by running one command." }
                 </p>
                 <p>
-                    <button {onclick}>{ "Load info of this repo" }</button>
+                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-emerald-600 text-slate-100 hover:bg-emerald-600/90" {onclick}>{ "Load info of this repo" }</button>
                 </p>
                 <p>
                     {
@@ -67,7 +63,7 @@ pub fn about() -> Html {
                     }
                 </p>
                 <p>
-                    { "Edit " } <code>{ "src/components/about.rs" }</code> { " and save to reload." }
+                    { "Edit " } <code>{ "src/app/about.rs" }</code> { " and save to reload." }
                 </p>
             </header>
         </div>
@@ -113,18 +109,24 @@ enum Error {
 
 #[cfg(test)]
 mod tests {
+    use std::time::Duration;
     use wasm_bindgen_test::*;
+    use yew::platform::time::sleep;
 
     wasm_bindgen_test_configure!(run_in_browser);
 
     use super::About;
-    use yew::start_app;
 
     #[wasm_bindgen_test]
-    fn about_page_has_an_app_link() {
-        start_app::<About>();
+    async fn about_page_has_an_app_link() {
+        yew::Renderer::<About>::with_root(
+            gloo_utils::document().get_element_by_id("output").unwrap(),
+        )
+        .render();
 
-        let app_links = gloo_utils::document().get_elements_by_class_name("app-link");
+        sleep(Duration::ZERO).await;
+
+        let app_links = gloo_utils::document().get_elements_by_tag_name("a");
 
         assert_eq!(app_links.length(), 1);
 
