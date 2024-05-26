@@ -1,17 +1,30 @@
-<!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yew App</title>
 
     <link rel="shortcut icon" href="favicon.ico">
-    <script type="module">import init from '/create-yew-app/yew-app-78690604ccdf952b.js';init('/create-yew-app/yew-app-78690604ccdf952b_bg.wasm');</script>
+    
+<script type="module">
+import init, * as bindings from '/create-yew-app/yew-app-323877f64c99018d.js';
+const wasm = await init('/create-yew-app/yew-app-323877f64c99018d_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
     
     
-    <link rel="stylesheet" href="/create-yew-app/tailwind-4bc868aa56a914db.css">
-    <base href="/create-yew-app/">
+    <link rel="stylesheet" href="/create-yew-app/tailwind-7b4f45dcf4a45f7a.css" integrity="sha384&#x2D;RjOTYXI2GTLrjmi7M&#x2F;PWnwVHTngRy9Cqo641Y15isC7mvrNYn7yF9EPFOQQpsxvI"/>
+    <base href="/create-yew-app/" />
   
-<link rel="preload" href="/create-yew-app/yew-app-78690604ccdf952b_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/create-yew-app/yew-app-78690604ccdf952b.js"></head>
+<link rel="modulepreload" href="/create-yew-app/yew-app-323877f64c99018d.js" crossorigin=anonymous integrity="sha384-EkNZAJbxpW3GtjxxL8RzgnAtAsZcdZ9ufSAuzbttQELN6oByMmiFD+08vkbrLvD9">
+<link rel="preload" href="/create-yew-app/yew-app-323877f64c99018d_bg.wasm" crossorigin=anonymous integrity="sha384-RNJAMHQ9AJii4yf7IxVxeCn9HvoVj+/GHuD3WLuHniJ4XOAK+zxTei8GU2l1HDNY" as="fetch" type="application/wasm"></head>
   <body class="min-h-screen">
-  
-</body></html>
+  </body>
+</html>
