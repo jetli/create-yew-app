@@ -1,6 +1,8 @@
 use yew::prelude::*;
 use yew_hooks::prelude::*;
 
+use crate::components::ui::button::Button;
+
 /// Home page
 #[function_component(Home)]
 pub fn home() -> Html {
@@ -27,9 +29,9 @@ pub fn home() -> Html {
                     <a id="learn_yew" class="text-emerald-800 underline" href="https://yew.rs" target="_blank" rel="noopener noreferrer">{ "Learn Yew" }</a>
                 </p>
                 <p class="space-x-4">
-                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-emerald-600 text-slate-100 hover:bg-emerald-600/90" onclick={ondecrease}>{ "Decrease" }</button>
+                    <Button onclick={ondecrease}>{ "Decrease" }</Button>
                     <span class="w-12 inline-block">{ *counter }</span>
-                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-emerald-600 text-slate-100 hover:bg-emerald-600/90" onclick={onincrease}>{ "Increase" }</button>
+                    <Button onclick={onincrease}>{ "Increase" }</Button>
                 </p>
                 <p>
                     { "Edit " } <code>{ "src/app/home.rs" }</code> { " and save to reload." }

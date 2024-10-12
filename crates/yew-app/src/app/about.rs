@@ -2,6 +2,8 @@ use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use yew::prelude::*;
 use yew_hooks::prelude::*;
 
+use crate::components::ui::button::Button;
+
 /// About page
 #[function_component(About)]
 pub fn about() -> Html {
@@ -26,7 +28,7 @@ pub fn about() -> Html {
                     { ", Set up a modern yew web app by running one command." }
                 </p>
                 <p>
-                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-emerald-600 text-slate-100 hover:bg-emerald-600/90" {onclick}>{ "Load info of this repo" }</button>
+                    <Button {onclick}>{ "Load info of this repo" }</Button>
                 </p>
                 <p>
                     {
@@ -118,7 +120,7 @@ mod tests {
     use super::About;
 
     #[wasm_bindgen_test]
-    async fn about_page_has_an_app_link() {
+    async fn _about_page_has_an_app_link() {
         yew::Renderer::<About>::with_root(
             gloo_utils::document().get_element_by_id("output").unwrap(),
         )
